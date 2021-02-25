@@ -1,14 +1,40 @@
-let input = parseInt(prompt("How many pixels do you want? (max.100)"));
-while (input>100){ input = parseInt(prompt("Choose a number between 0 and 100."))}
+let submit = document.querySelector(".submit");
+let input = submit.addEventListener("click", pixels);
+let colorType = "greyScale";
 
 
-let n = input*input;
-pixels(n)
+pixels()
 color()
 
+
+let rainbow = document.querySelector("#rainbow")
+rainbow.addEventListener("click", saveAddColorRandom)
+function saveAddColorRandom(){
+    colorType = "rainbow";
+    colorRandom()
+    console.log(colorType)
+}
+
+let grey = document.querySelector("#gradient");
+grey.addEventListener("click", saveAddColor)
+function saveAddColor(){
+    resetCallBack()
+    colorType= "greyScale";
+    pixels()
+    console.log(colorType)
+    
+}
+
 function pixels(){
+    remove()
+    let input = parseInt(document.querySelector("#input").value);
+    if (input>100){
+        alert("Too many pixels, lets stay at 100.")
+        input=100
+    }
+    n = input*input;
     let container= document.querySelector(".container");
-    let maxWidth = 960;
+    let maxWidth = 700;
     let width = maxWidth/input + "px";
     while (n>0){
         pixel = document.createElement("div");
@@ -20,10 +46,18 @@ function pixels(){
         add += add + container.appendChild(pixel)
         n--
     }
+    if (colorType ==="rainbow"){colorRandom()}
+    if (colorType === "greyScale"){color()}
+    
+}
+function remove(){
+    let pixels = Array.from(document.querySelectorAll(".pixel"));
+    pixels.forEach(pixel => pixel.remove())
+    
 }
 
-
 function color(){
+    resetCallBack()
     let pixels = Array.from(document.querySelectorAll(".pixel"));
     pixels.forEach(pixel => pixel.addEventListener("click", percent))
     function percent (){
@@ -31,9 +65,21 @@ function color(){
         let color = gradient(currColor)
         this.style.backgroundColor = color;
     }
-    pixels.forEach(pixel => pixel.addEventListener("mouseleave", mouseEnter))
+    pixels.forEach(pixel => pixel.addEventListener("mouseenter", mouseEnter))
     function mouseEnter(){
         pixels.forEach(pixel => pixel.addEventListener("mouseenter", percent))
+    }
+}
+function colorRandom(){
+    let pixels = Array.from(document.querySelectorAll(".pixel"));
+    pixels.forEach(pixel => pixel.addEventListener("click", color))
+    function color (){
+        let color = randomRGB()
+        this.style.backgroundColor = color;
+    }
+    pixels.forEach(pixel => pixel.addEventListener("mouseenter", mouseEnter))
+    function mouseEnter(){
+        pixels.forEach(pixel => pixel.addEventListener("mouseenter", color))
     }
 }
 
@@ -41,8 +87,8 @@ function color(){
 
 
 let reset = document.querySelector(".reset");
-    reset.addEventListener("click", remove);
-function remove (){
+    reset.addEventListener("click", resetCallBack);
+function resetCallBack (){
         let pixels = Array.from(document.querySelectorAll(".pixel"))
         pixels.forEach((pixel) => pixel.style.backgroundColor = "rgb(184, 184, 184)")
     }

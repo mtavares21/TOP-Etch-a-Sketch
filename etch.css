@@ -1,11 +1,73 @@
+body{
+    display: flex;
+    justify-items: center;
+    justify-content: space-evenly;
+}
+.left{
+    justify-self: center;
+    display: block;
+    margin-left: 50px;
+    font-family: monospace;
+}
+.buttons{
+    font-family: monospace;
+    display: block;
+    justify-self: center;
+    justify-items: center;
+
+}
+#input{
+    margin-left: 5px;
+    
+}
+input{
+    width: 100px;
+    font-family: monospace;
+}
+.input{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    flex-wrap: wrap;
+}
+.submit{
+    width: 100px;
+    margin-top: 5px;
+    justify-self: flex-start;
+    font-family: monospace;
+    background-color: white;
+    border-style: solid;
+    border-color:black;
+    border-width: 1px;
+    border-radius: 5px;
+}
+.colorTitle{
+    font-family: monospace;
+    font-size: 20px;
+    justify-self: center;
+}
+.colors{
+    display: flex;
+    justify-content: flex-start;
+    justify-items: flex-start;
+    align-items: flex-start;
+    font-family: monospace;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+h1{
+    font-family: monospace;
+    font-size: 40px;
+    display: block;
+    justify-self: center;
+}
+
 .reset{
     margin-top: 10px;
     margin-bottom: 10px;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    justify-self: center;
     background-color: white;
     font-family: monospace;
     font-size: larger;
@@ -26,8 +88,8 @@
 
 .container{
     display:flex;
-    width: 960px;
-    height: 960px;
+    width: 700px;
+    height: 400px;
     background-color:white;
     flex-wrap: wrap;
     margin-right: auto;
