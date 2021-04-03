@@ -6,4 +6,4 @@ Create a Etch-a-Sketch pad, the user should be able do choose the number of pixe
 
 Note: The code includes a __random color__ function, you can try it insted of the black gradient.
 
-
+Live Preview: https://mtavares21.github.io/Etch-a-Sketch/etch.html
