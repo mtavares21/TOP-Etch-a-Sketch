@@ -1,8 +1,8 @@
 # Etch-a-Sketch
 
-## Objective
+An Etch-a-Sketch pad, ever played with one before?
 
-Create a Etch-a-Sketch pad, the user should be able do choose the number of pixels in witch they'll draw upon.
+In this one you can choose your line dimension by picking the pixel size.
 
 Note: there's a rainbow button, hit it, hit refresh and see what happens...
 
