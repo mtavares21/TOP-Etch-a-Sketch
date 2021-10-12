@@ -8,4 +8,4 @@ Note: there's a rainbow button, hit it, hit refresh and see what happens...
 
 ## Live Preview:
 
-https://mtavares21.github.io/Etch-a-Sketch/etch.html
+https://mtavares21.github.io/TOP-Etch-a-Sketch/etch.html
